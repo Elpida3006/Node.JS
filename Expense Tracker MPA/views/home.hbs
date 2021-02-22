@@ -1,0 +1,67 @@
+
+
+{{#if isLogged}}
+        
+    <main>
+
+        <section class="actions">
+            <form action="/user/refill" method="POST">
+                <h2>Salary time? Refill your account amount.</h2>
+                <input type="text" id="refill-amount" name="refill" value="{{refill}}">
+                <button type="submit">Refill</button>
+            </form>
+            <div>
+                <h2>New expense comming up?</h2>
+                <a href="products/create">Add it now</a>
+            </div>
+        </section>
+
+        <hr class="separator">
+
+        <table class="expenses">
+               {{#if expenses}}
+            <thead>
+                <tr>
+                    <th>Merchant</th>
+                    <th>Amount</th>
+                    <th>Category</th>
+                    <th>Description</th>
+                </tr>
+
+            </thead>
+            <tbody>
+         
+                {{#each expenses}}
+                <tr>
+                    <td>
+                        <p>{{merchant}}</p>
+                        <div class="report">
+                            <a href="/products/report/{{_id}}">Report</a>
+                        </div>
+                    </td>
+                    <td>
+                        <img src="static/images/amount.png" alt="">
+                        <p>лв {{total}}</p>
+                    </td>
+                    <td>
+                        <img src="static/images/category.png" alt="">
+                        <p>{{category}}</p>
+                    </td>
+                    <td>
+                        <img src="static/images/hastag.png" alt="">
+                        <p>{{description}}</p>
+                    </td>
+                   </tr>
+                {{/each}}
+
+            </tbody>          
+        </table>
+		{{else}}
+		<h1 class="no-expenses">No expenses founded so far.. <span>GOOD JOB!</span></h1>
+        {{/if}}
+    </main>
+{{else}}
+    <main>
+    <p class="guest-message">MoneyGone? The best expense tracker tool of all time!<br>Аre you new here? <a href="/user/register">Register</a> yourself!</p>
+</main>
+{{/if}}

@@ -1,0 +1,18 @@
+    <aside>
+            <div class="center">
+                <img class="logo" src="/img/logo.png" alt="logo">
+            </div>
+
+            <nav>
+                <a href="/products">Main Page</a>
+                <a href="/products/all-articles">All Articles</a>
+                <form>
+              <form action="/products/search" method="GET">
+                    <input type="text" name="search">
+                    <input type="submit" value="Search">
+                </form>
+                {{#if isLogged}}
+                <a href="/products/create">Create New Article</a>
+                {{/if}}
+            </nav>
+        </aside>

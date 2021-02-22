@@ -1,0 +1,95 @@
+
+{{#if isLogged}}
+        <main>
+            <h1 class="text-center">Courses</h1>
+            <section>
+                <a href="/products/create" class="btn btn-warning ">Create Course</a>
+                <form method="GET" class="search float-right">
+                    <label>Search: </label>
+                    <input type="text" name="search" >
+                    <input type="submit" class="btn btn-primary" value="Search">
+                </form>
+            </section>
+
+            <div class="container mt-3">
+                <div class="row ">
+                    {{#if courses}}
+                    <div class="card-deck d-flex justify-content-center">
+
+                    {{#each courses}}                 
+                  <div class="card mb-4">
+                            <img class="card-img-top"
+                                src="{{imageUrl}}"
+                                alt="Card image cap" width="400">
+                            <div class="card-body">
+                                <h4 class="card-title">{{title}}</h4>
+                            </div>
+                            <div class="card-footer">
+                                <p>{{userBookedEnrolled.length}}</p>
+                                <a href="/products/details/{{_id}}"><button type="button" class="btn btn-primary">Details</button></a>
+                                <small class="float-right">{{createdAt}}</small>
+                     
+                            </div>
+    </div>
+                    {{/each}}       
+                    </div>
+                </div>
+             
+            </div>
+               {{else}}
+            <h3 class="text-center">No courses...</h3>
+             {{/if}}  
+        </main>
+{{else}}
+        <main>
+            <div class="jumbotron jumbotron-fluid">
+                <div class="container">
+                    <h1 class="display-4">Tutorials</h1>
+                    <p class="lead">Start Self-Learning Today: Be the best Developer in the company</p>
+                </div>
+            </div>
+
+            <div>
+                <h1 class="text-center">Top Courses</h1>
+                <div class="container mt-3">
+                    {{#if courses}}
+                    <div class="row d-flex justify-content-center">
+
+                        <div class="card-deck">
+
+                    {{#each courses}}                 
+                    {{!-- {{> course}} --}}
+                       <div class="card mb-4">
+                            <img class="card-img-top"
+                                src="{{imageUrl}}"
+                                alt="Card image cap" width="400">
+                            <div class="card-body">
+                                <h4 class="card-title">{{title}}</h4>
+                               
+                            </div>
+                               <p>{{userBookedEnrolled.length}}</p>
+                            <div class="card-footer">
+                            {{!-- {{#if isLogged}}
+                                <a href="/products/details/{{_id}}"><button type="button" class="btn btn-primary">Details</button></a>
+                             {{/if}} --}}
+                                <small class="float-right">{{createdAt}}</small>
+                     
+                            </div>
+    </div>
+                    {{/each}} 
+
+                          
+
+                        </div>
+{{else}}
+                 </div>
+                    <h4 class="text-center">No courses...</h4>
+
+                </div>
+ {{/if}}               
+            </div>
+        </main>
+
+        {{/if}}
+
+       

@@ -1,0 +1,91 @@
+{{!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Cubicle</title>
+  <link href="/css/site.css" type="text/css" rel="stylesheet">
+  <link rel='shortcut icon' type='image/x-icon' href='/static/images/favicon.png' />
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <ul>
+        <li><img class="logo" src="/images/logo.png"></li>
+        <li><a href="/products">Browse</a></li>
+        <li><a href="/products/about-cubicle">About</a></li>
+         {{#if isLogged}}
+         <li><a href="/products/myCubes">My Cubes</a></li>
+        <li><a href="/user/logout">Logout</a></li>
+        <li><a href="/products/create">Add a Cube</a></li>
+        <li><a href="/accessories/createAccessory">Add an Accessory</a></li>
+        <li><a class="profile"href="/user/profile">Welcome,<span>{{username}}</span></a></li>
+           {{else}}
+        <li><a href="/user/login">Login</a></li>
+        <li><a  href="/user/register">Register</a></li>
+ {{/if}}
+      </ul>
+    </header>
+    {{{body}}}
+
+      </div>
+  <footer>@Cubicle: Exercise for Express.js , Handlebars, MongoDb, Authentifcation and Authorization</footer>
+</body>
+
+</html> --}}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>BookingUni</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+    <div id="container">
+  {{!-- <div>
+            <div class="notification loadingBox">
+                Loading …
+            </div>
+            <div class="notification infoBox">
+                <span>Info</span>
+            </div>
+            <div class="notification errorBox">
+                <span>Error</span>
+            </div>
+        </div> --}}
+        <nav>
+            <div class="left-container">
+                <ul>
+                    <li><a href="/products">Home</a></li>
+                     {{#if isLogged}}
+                    <li><a href="/products/create">Add +</a></li>
+                    {{else}}
+                    <li><a href="/user/login">Login</a></li>
+                    <li><a href="/user/register">Register</a></li>
+                    {{/if}}
+                </ul>
+            </div>
+              {{#if isLogged}}
+            <div class="right-container">
+                <a href="/user/profile" class="log-out">{{username}}</a>
+                <a href="/user/logout" class="log-out">Logout</a>
+            </div>
+                 {{/if}}
+        </nav>
+   
+      {{{body}}}
+
+  
+
+
+        <footer>@SoftUni - JS Back-end - BookingUni 2020</footer>
+    </div>
+
+</body>
+
+</html>

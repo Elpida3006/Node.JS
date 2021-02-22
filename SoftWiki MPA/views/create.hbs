@@ -1,0 +1,15 @@
+<section id="notifications">
+    <p>{{error.message}}</p>
+</section>
+<section>
+    <h2>Create new article</h2>
+    <div class="spacer">
+        <form action='/products/create' method="POST">
+            <label>Article title</label>
+            <input type="text" class="title" name="title" >
+            <label>Content</label>
+            <textarea name="description"></textarea>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</section>

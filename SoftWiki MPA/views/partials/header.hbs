@@ -1,0 +1,11 @@
+     <header>
+         {{#if isLogged}}
+           
+                 <span>Welcome, {{username}}  !</span>
+                <a href="/user/logout">[Logout]</a>
+                {{else}}
+                  <span>Welcome, Guest  !</span>
+                     <a href="/user/login">Login</a>
+                <a href="/user/register">Register</a>
+                {{/if}}
+            </header>

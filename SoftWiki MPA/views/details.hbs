@@ -1,0 +1,19 @@
+
+                <div class="spacer">
+                    <h2>{{article.title}}
+                        <div class="controls">
+                          {{#if isLogged}}
+                            <a href="/products/edit/{{article._id}}">[edit]</a>
+                            {{/if}}
+                            {{#if isCreator}}
+                            <a href="/products/delete/{{article._id}}">[delete]</a>
+                            {{/if}}
+                        </div>
+                    </h2>
+                    <article>
+
+                        {{article.description}}
+                     
+                    </article>
+                </div>
+           
